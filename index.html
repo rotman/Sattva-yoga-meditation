@@ -374,6 +374,27 @@
     color: rgba(248,242,224,0.9);
   }
 
+  /* SESSIONS NOTES */
+  .sessions-notes {
+    max-width: 800px;
+    margin: 4rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(201,126,126,0.3);
+    text-align: center;
+  }
+
+  .sessions-notes ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sessions-notes li {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(248,242,224,0.8);
+    margin-bottom: 1rem;
+  }
+
   /* INFO SECTION */
   .info-section {
     padding: 6rem 2rem;
@@ -418,16 +439,56 @@
   /* ABOUT SECTION */
   .about-section {
     padding: 6rem 2rem;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
+  }
+
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
   }
 
   .about-text {
+    flex: 1;
+    min-width: 300px;
     font-size: 1.05rem;
     line-height: 1.9;
     color: var(--soft);
-    margin-bottom: 1.5rem;
+    text-align: right;
+  }
+
+  .about-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .instructor-image {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(196, 168, 106, 0.2);
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .about-text, .about-image {
+      min-width: auto;
+      flex: none;
+    }
+
+    .about-text {
+      text-align: right;
+    }
   }
 
   /* CTA SECTION */
@@ -448,6 +509,44 @@
     transform: translate(-50%, -50%);
     opacity: 0.03;
     pointer-events: none;
+  }
+
+  /* DARK SECTION */
+  .dark-intro-section {
+    background: linear-gradient(135deg, #6B3A2A 0%, #8B4A38 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dark-intro-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* LIGHT SECTION */
+  .light-intro-section {
+    background: var(--cream);
+    padding: 6rem 2rem;
+    text-align: center;
+    color: #4A2418;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .light-intro-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
 
   .cta-title {
@@ -485,10 +584,31 @@
     box-shadow: 0 16px 50px rgba(196,168,106,0.5);
   }
 
+  .section-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #E8B89A, #C97E7E);
+    color: #4A2418;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.9rem 2.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    margin-top: 2.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 30px rgba(196,168,106,0.3);
+  }
+
+  .section-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(196,168,106,0.45);
+  }
+
   .cta-note {
     margin-top: 1.5rem;
-    font-size: 0.85rem;
-    color: rgba(248,242,224,0.75);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(248,242,224,0.95);
     position: relative; z-index: 1;
   }
 
@@ -639,46 +759,54 @@
 
 <!-- BENEFITS -->
 <section class="benefits-section">
-  <h2 class="section-title reveal">מה תקבלו <span>בקורס?</span></h2>
+  <h2 class="section-title reveal">הכלים שתקבלו בקורס <span>יעזרו לכם</span></h2>
 
   <div class="benefits-grid">
     <div class="benefit-card reveal delay-1">
-      <div class="benefit-icon">🌊</div>
-      <div class="benefit-title">להתמודד עם מתח וחרדה</div>
+      <div class="benefit-title"><strong>להתמודד עם מתח וחרדה</strong></div>
       <p class="benefit-desc">לפתח רוגע ואיזון פנימי – כלים אמיתיים לחיי היומיום</p>
     </div>
     <div class="benefit-card reveal delay-2">
-      <div class="benefit-icon">💫</div>
-      <div class="benefit-title">קשרים עמוקים יותר</div>
-      <p class="benefit-desc">לטפח קשרים עמוקים ובריאים יותר עם היקרים לכם</p>
+      <div class="benefit-title"><strong>לטפח קשרים עמוקים ובריאים יותר עם היקרים לכם</strong></div>
+      <p class="benefit-desc">מתוך היכרות טובה יותר עם עצמכם והבנה טובה יותר של דפוסי ההתנהגות שלכם ושל האהובים שלכם</p>
     </div>
     <div class="benefit-card reveal delay-3">
-      <div class="benefit-icon">🌿</div>
-      <div class="benefit-title">להיות קשובים לעצמכם</div>
-      <p class="benefit-desc">לדעת יותר לעצמכם ולמה שבאמת מתאים לכם</p>
+      <div class="benefit-title"><strong>להיות קשובים יותר לעצמכם</strong></div>
+      <p class="benefit-desc">ולמה שבאמת מתאים לכם</p>
     </div>
     <div class="benefit-card reveal delay-1">
-      <div class="benefit-icon">🔥</div>
-      <div class="benefit-title">חזרה לעצמת הביקורת</div>
-      <p class="benefit-desc">להתחבר לחוזקות שלכם ולהפכית ביקורת עצמית</p>
+      <div class="benefit-icon"></div>
+      <div class="benefit-title"><strong>להתחבר לחוזקות שלכם ולהפחית ביקורת עצמית</strong></div>
+      <p class="benefit-desc">לפתח יותר חמלה עצמית והתבוננות נטולת שיפוטיות</p>
     </div>
     <div class="benefit-card reveal delay-2">
-      <div class="benefit-icon">❤️</div>
-      <div class="benefit-title">פתיחות ורכות</div>
-      <p class="benefit-desc">לפתח אומץ ללכת עם הלב ולהרגיש חופשיים יותר</p>
+      <div class="benefit-icon"></div>
+      <div class="benefit-title"><strong>לפתח אומץ ללכת עם הלב</strong></div>
+      <p class="benefit-desc">ולהרגיש חופשיים יותר</p>
     </div>
     <div class="benefit-card reveal delay-3">
-      <div class="benefit-icon">☀️</div>
-      <div class="benefit-title">גישה רכה ומקבלת</div>
-      <p class="benefit-desc">לאמץ גישה רכה ומקבלת לחיים – מתוך כוח, לא ויתור</p>
+      <div class="benefit-icon"></div>
+      <div class="benefit-title"><strong>לאמץ גישה רכה ומקבלת לחיים</strong></div>
+      <p class="benefit-desc">לרכך את ההסתכלות על היום-יום ולאפשר בחירות נכונות יותר ממקום זה</p>
     </div>
   </div>
+</section>
+
+<!-- DARK INTRO SECTION -->
+<section class="dark-intro-section">
+  <p class="reveal">לא צריך שום ידע מוקדם במדיטציה או בפילוסופיה.<br>רק רצון לעצור, להקשיב, ולפגוש את עצמכם – קצת אחרת.</p>
+</section>
+
+<!-- LIGHT INTRO SECTION -->
+<section class="light-intro-section">
+  <p class="reveal">מרחב לנשום, להתבונן, לשאול שאלות ולפגוש את עצמנו מתוך נוכחות, בהירות ועדינות</p>
 </section>
 
 <!-- SESSIONS -->
 <section class="sessions-section">
   <h2 class="section-title reveal">מבנה הקורס</h2>
-  <p class="reveal" style="text-align:center; color:rgba(247,243,232,0.7); margin-bottom:3rem; font-size:1rem;">מפגשים בני שעתיים כל אחד – שילוב של לימוד וטרגול</p>
+  <p class="reveal" style="text-align:center; color:rgba(247,243,232,0.7); margin-bottom:1rem; font-size:1rem;">מפגשים בני שעתיים כל אחד</p>
+  <p class="reveal" style="text-align:center; color:rgba(247,243,232,0.85); margin-bottom:3rem; font-size:0.95rem;">שילוב של לימוד ותרגול טכניקות מדיטציה מגוונות, לימוד עקרונות וכלים מהפילוסופיה היוגית והבודהיסטית, חקירה אישית ושיח מעמיק</p>
 
   <div class="sessions-timeline">
 
@@ -686,7 +814,7 @@
       <div class="session-dot">1</div>
       <div class="session-content">
         <div class="session-title-text">מבוא למדיטציה ולמיינדפולנס</div>
-        <p class="session-desc-text">יציאה מ"טייס-אוטומטי" והתחלה של דרך חדשה להיות נוכחים, ערים ומובילים את חיינו</p>
+        <p class="session-desc-text">יציאה מ"טייס-אוטומטי" והתחלה של דרך חדשה בה אנחנו בוחרים להיות נוכחים, ערים ומובילים את חיינו</p>
       </div>
     </div>
 
@@ -702,7 +830,7 @@
       <div class="session-dot">3</div>
       <div class="session-content">
         <div class="session-title-text">הכרת ההכרה</div>
-        <p class="session-desc-text">היכרות עם שלוש הגונות ושלושת מצבי התודעה – שלוש דרכים להבנת המתרחש בתודעה</p>
+        <p class="session-desc-text">היכרות עם שלוש הגונות ושלושת מצבי התודעה - מפת דרכים להבנת המתרחש בתודעה</p>
       </div>
     </div>
 
@@ -718,18 +846,25 @@
       <div class="session-dot">5</div>
       <div class="session-content">
         <div class="session-title-text">כאב, סבל ומה שביניהם</div>
-        <p class="session-desc-text">היכרות עם מודל הסבל ואיך ההבנה הזאת יכולה לשנות את ההתנהלות שלנו בעולם</p>
+        <p class="session-desc-text">היכרות עם מודל הסבל – ואיך הבנה הזאת יכולה לשנות את ההתנהלות שלנו בעולם</p>
       </div>
     </div>
 
     <div class="session-item reveal delay-5">
       <div class="session-dot">6</div>
       <div class="session-content">
-        <div class="session-title-text">הפחתת הסבל והדרך לשם</div>
-        <p class="session-desc-text">כלים מעשיים לסיכום הדרך המשותפת ויציאה לדרך אישית של תרגול כדרך חיים</p>
+        <div class="session-title-text">הפחתת הסבל והדרך לשם דרך כלים מעשיים</div>
+        <p class="session-desc-text">סיכום הדרך המשותפת ויציאה לדרך אישית של תרגול כדרך חיים</p>
       </div>
     </div>
 
+  </div>
+
+  <div class="sessions-notes">
+    <ul>
+      <li>יינתנו "מתנות בית" – תרגולים קצרים להעמקת ההבנה והיישום בחיי היומיום.</li>
+      <li>ייתכנו התאמות קלות בתכנים לפי קצב ההתקדמות של הקבוצה ומה שיעלה מתוכה, מתוך כבוד למה שחי ונוכח ברגע.</li>
+    </ul>
   </div>
 </section>
 
@@ -747,33 +882,30 @@
     <div class="info-card reveal delay-2">
       <div class="info-icon">📅</div>
       <h3>מתי נפגשים?</h3>
-      <p>ימי <strong>שני</strong><br>19:30 – 21:30<br><small style="font-size:0.85rem; font-weight:300; color:var(--soft)">9.3 – 30.3 ו-13.4 – 20.4<br>(ב-6.4 לא יהיה מפגש בגלל פסח)</small></p>
+      <p><strong style="font-weight:500">ימי שני</strong><br><strong style="font-weight:500">19:30 - 21:30</strong><br><span style="font-weight:300">בתאריכים:</span><br><strong style="font-weight:500">27.4 - 1.6</strong></p>
     </div>
 
     <div class="info-card reveal delay-3">
       <div class="info-icon">💰</div>
       <h3>עלות הקורס</h3>
       <p class="price">₪990</p>
-      <p style="font-size:0.85rem; font-weight:300; color:var(--soft); margin-top:0.5rem">לכל 6 המפגשים<br>* מספר המקומות מוגבל</p>
+      <p style="font-size:1rem; font-weight:600; color:var(--soft); margin-top:1rem">לכל 6 המפגשים</p>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about-section">
-  <div class="section-tag">קצת על המנחה</div>
-  <h2 class="section-title reveal">ליהי <span>איזנמן</span></h2>
+  <h2 class="section-title reveal">קצת על <span>המנחה</span></h2>
 
-  <div class="about-text reveal delay-1">
-    ליהי איזנמן, מורה ליוגה ומדיטציה, הולכת בדרך היוגה כבר יותר מעשור.
-    לאורך השנים למדתי אצל מורים מגוונים, וכל אחד ואחת מהן העניקו לי את הידע,
-    ההבנות והכלים שאספתי שילבתי לגישתי הייחודית משלי.
-  </div>
-
-  <div class="about-text reveal delay-2">
-    כזו שאני מביאה אל תוך שיעורי היוגה בסטודיו ואל מפגשי המדיטציה,
-    מתוך רצון לאפשר לכל אחת ואחד למצוא את הדרך האישית שלהם אל הגוף,
-    הנשימה והשקט הפנימי.
+  <div class="about-content reveal delay-1">
+    <div class="about-text">
+      ליהי איזנמן, מורה ליוגה ומדיטציה, הולכת בדרך היוגה כבר יותר מעשור. לאורך השנים למדתי אצל מורים מגוונים, וכל אחד ואחת מהן העניקו לי השראה אחרת. את הידע, ההבנות והכלים שאספתי שילבתי לגישה ייחודית משלי - כזו שאני מביאה אל תוך שיעורי היוגה בסטודיו ואל מפגשי המדיטציה, מתוך רצון לאפשר לכל אחת ואחד למצוא את הדרך האישית שלהם אל הגוף, הנשימה והשקט הפנימי.
+    </div>
+    
+    <div class="about-image">
+      <img src="instructor-image.webp" alt="ליהי איזנמן" class="instructor-image">
+    </div>
   </div>
 </section>
 
@@ -790,7 +922,7 @@
     לרישום ותשלום &larr;
   </a>
 
-  <p class="cta-note reveal delay-3">* מספר המקומות מוגבל – מומלץ להבטיח מקום מוקדם</p>
+  <p class="cta-note reveal delay-3">מספר המקומות בקורס מוגבל - הבטיחו את מקומכם</p>
 
   <p class="contact-line reveal delay-4">
     לפרטים נוספים צרו קשר עם ליהי:
